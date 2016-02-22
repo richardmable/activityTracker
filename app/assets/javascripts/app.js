@@ -6,7 +6,7 @@ angular.module('activityTracker', ['ui.router', 'templates', 'Devise', 'ng-token
 	'$urlRouterProvider',
 	'$authProvider',
 	function($stateProvider, $urlRouterProvider, $authProvider) {
-		$authProvider.confgure({
+		$authProvider.configure({
 			apiUrl: 'https://www.strava.com/api/v3/athlete/'
 		});
 		$stateProvider
