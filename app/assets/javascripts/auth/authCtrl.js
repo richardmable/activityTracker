@@ -5,21 +5,20 @@ angular.module('activityTracker')
 .controller('AuthCtrl', [
 	'$scope',
 	'$state',
-	'Auth',
-	// login and register functions that use methods on Auth
-	// these return promises which we can use to redirect the user to the home state
-	// if authentication or user registration is successful.
-	function($scope, $state, Auth){
-		// login method that uses Auth.login to say if successful, go to home page
-		$scope.login = function(){
-			Auth.login($scope.user).then(function(){
-				// go to the home state
-				$state.go('home');
-			});
-		};
-		$scope.register = function(){
-			Auth.register($scope.user).then(function(){
-				$state.go('home');
-			});
-		};
+	'$auth',
+	// methods for logging in using omniauth with ng-token-auth
+	function($scope, $state, $auth){
+		$scope.handleBtnClick= function(){
+			$auth.authenticate('strava')
+			// handle success
+			.then(function(resp){
+				// redirect to home on successful login
+				$state.go('home')
+			})
+			// handle errors
+			.catch(function(resp){
+				$state.go('login')
+				// add an error message
+			})
+		}
 }]);

@@ -7,7 +7,10 @@ angular.module('activityTracker', ['ui.router', 'templates', 'Devise', 'ng-token
 	'$authProvider',
 	function($stateProvider, $urlRouterProvider, $authProvider) {
 		$authProvider.configure({
-			apiUrl: 'https://www.strava.com/api/v3/athlete/'
+			apiUrl: 'https://www.strava.com/oauth/authorize/'
+			// authProviderPaths: {
+			// 	strava: '/auth/strava'
+			// }
 		});
 		$stateProvider
 			// the state is given a name
@@ -32,15 +35,15 @@ angular.module('activityTracker', ['ui.router', 'templates', 'Devise', 'ng-token
 			.state('login', {
 				url: '/login',
 				templateUrl: 'auth/_login.html',
-				controller: 'AuthCtrl',
+				controller: 'AuthCtrl'
 				// this is an onEnter callback that will send the user to the home state
 				// if they are already authenticated or just registered
 				// have to inject $state and Auth
-				onEnter: ['$state', 'Auth', function($state, Auth){
-					Auth.currentUser().then(function(){
-						$state.go('home');
-					})
-				}]
+				// onEnter: ['$state', 'Auth', function($state, Auth){
+				// 	Auth.currentUser().then(function(){
+				// 		$state.go('home');
+				//	})
+				// }]
 			})
 
 		// otherwise() redirects to unspecified routes
