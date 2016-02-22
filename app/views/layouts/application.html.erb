@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>CycleWalk</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+	  <title>Activity Tracker</title>
+	  <%= stylesheet_link_tag    'application', media: 'all' %>
+	  <%= javascript_include_tag 'application' %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body ng-app="activityTracker">
+		<div ng-include="'nav/_nav.html'"></div>
+	<!-- for flash messaging. Divs only appear if there are flash messages -->
+	<!-- otherwise they constantly appear if they were wrapped in their own divs -->
+		<% if flash[:notice] -%>
+			<div class="flashNotice"><p><%= flash[:notice] %><p></div>
+		<% end %>
+		<% if flash[:alert] -%>
+			<div class="flashNotice"><p><%= flash[:alert] %><p></div>
+		<% end %>
+	<!-- render the Angular state -->
+		<div>
+			<ui-view></ui-view>
+		</div>
 
-<%= yield %>
 
-</body>
+	</body>
 </html>
