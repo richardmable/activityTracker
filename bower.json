@@ -18,6 +18,10 @@
   "dependencies": {
     "angular": "^1.5.0",
     "angular-ui-router": "^0.2.18",
-    "AngularDevise": "angular-devise#^1.2.0"
+    "AngularDevise": "angular-devise#^1.2.0",
+    "ng-token-auth": "^0.0.28"
+  },
+  "resolutions": {
+    "angular": "^1.5.0"
   }
 }
