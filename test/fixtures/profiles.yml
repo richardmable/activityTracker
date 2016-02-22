@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fname: MyString
+  lname: MyString
+  user_id: 1
+  avatar_link: MyString
+  location: MyString
+  strava_premium: false
+  birthday: MyString
+  gender: MyString
+  weight: 1
+
+two:
+  fname: MyString
+  lname: MyString
+  user_id: 1
+  avatar_link: MyString
+  location: MyString
+  strava_premium: false
+  birthday: MyString
+  gender: MyString
+  weight: 1
