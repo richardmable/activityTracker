@@ -191,7 +191,6 @@ DEPENDENCIES
   angular_rails_csrf
   better_errors
   byebug
-  devise
   devise_token_auth
   figaro
   foreman

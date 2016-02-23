@@ -1,5 +1,5 @@
 // injects ui-router, Angular templates, and Devise into our Angular app
-angular.module('activityTracker', ['ui.router', 'templates', 'Devise', 'ng-token-auth'])
+angular.module('activityTracker', ['ui.router', 'templates', 'ng-token-auth'])
 // this is the Angular config function to setup a home state
 .config([
 	'$stateProvider',
@@ -7,7 +7,10 @@ angular.module('activityTracker', ['ui.router', 'templates', 'Devise', 'ng-token
 	'$authProvider',
 	function($stateProvider, $urlRouterProvider, $authProvider) {
 		$authProvider.configure({
-			apiUrl: 'https://www.strava.com/oauth/authorize/'
+			apiUrl: 'http://localhost:3000',
+			authProviderPaths: {
+				strava: '/auth/strava'
+			}
 			// authProviderPaths: {
 			// 	strava: '/auth/strava'
 			// }

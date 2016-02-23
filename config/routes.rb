@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  
+  mount DeviseTokenAuth::Engine => "/auth"
   root 'application#angular'
   mount_devise_token_auth_for 'User', at: 'auth'
   # The priority is based upon order of creation: first created -> highest priority.

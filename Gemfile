@@ -10,8 +10,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-# Devise for authentication
-gem 'devise'
+
 # For Angular templates with Rails
 gem 'angular-rails-templates', '~> 1.0'
 #for the respond_to feature
