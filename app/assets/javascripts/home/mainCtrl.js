@@ -5,8 +5,7 @@ angular.module('activityTracker')
 	// 'posts',
 
 	function($scope){
-		$scope.test = 'hello world';
-		console.log('hello');
+		$scope.profile = user.profile;
 	// 	//can only have two way data binding with $scope variables
 	// 	//this line mirrors the array returned by the service
 	// 	//this way, we can display the posts to the view
