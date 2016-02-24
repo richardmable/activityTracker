@@ -2,9 +2,14 @@ Rails.application.routes.draw do
 
   # so that devise_token_auth can connect to the routes of ng-token-auth
   mount DeviseTokenAuth::Engine => "/auth"
+  # serve the angular app as the root
   root 'application#angular'
+  # devise_token_auth paths
   mount_devise_token_auth_for 'User', at: 'auth'
+  # for display the auto-generated profile from Strava
   resources :profiles, only: [:show]
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
