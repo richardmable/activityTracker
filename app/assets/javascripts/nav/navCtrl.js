@@ -3,9 +3,11 @@ angular.module('activityTracker')
 
 .controller('NavCtrl', [
 	'$scope',
-	function($scope){
+	'$state',
+	function($scope, $state){
 		$scope.$on('auth:login-success', function(e, user){
-			$scope.user = user;
+			$rootScope.user = user;
+			console.log("welcome, " + user.email);
 		});
 		// $scope.$on('auth:validation-success', function(e, user){
 		// 	$scope.user = user;

@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-	def show
+	def index
 		profile = User.find(current_user.id).profile
 		respond_with profile
 	end

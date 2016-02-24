@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   # devise_token_auth paths
   mount_devise_token_auth_for 'User', at: 'auth'
   # for display the auto-generated profile from Strava
-  resources :profiles, only: [:show]
+  resources :profiles, only: [:index]
 
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
