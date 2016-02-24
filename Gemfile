@@ -21,10 +21,14 @@ gem 'angular_rails_csrf'
 gem 'better_errors'
 # for pulling in ENV vars from yml file
 gem 'figaro'
-#omniAuth ruby gem for authenticating with Strava
+# omniAuth ruby gem for authenticating with Strava
 gem 'omniauth-strava'
 # secure token based authentication designed to work with ng-token-auth module
 gem 'devise_token_auth'
+# provides support for Cross-Origin Resource Sharing (CORS) for Rack compatible web applications
+gem 'rack-cors', :require => 'rack/cors'
+gem 'devise'
+gem 'omniauth'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

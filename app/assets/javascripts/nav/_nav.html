@@ -2,7 +2,7 @@
 	<ul>
 		<li><a href="#/home">Home</a></li>
 		<li ng-hide="signedIn()"><a href="#/login">Login</a></li>
-		<li ng-show="signedIn()"><a href="#/">{{ user.profile.name }}</a></li>
+		<li>{{ user.email }}</li>
 		<li ng-show="signedIn()"><a ng-click="logout()">Log Out</a></li>
 	</ul>
 </div>

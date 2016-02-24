@@ -7,7 +7,9 @@ angular.module('activityTracker', ['ui.router', 'templates', 'ng-token-auth'])
 	'$authProvider',
 	function($stateProvider, $urlRouterProvider, $authProvider) {
 		$authProvider.configure({
+			// set the path of the api (the Rails app)
 			apiUrl: 'http://localhost:3000',
+			// set the omniauth provider path 
 			authProviderPaths: {
 				strava: '/auth/strava'
 			}

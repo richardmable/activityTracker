@@ -3,9 +3,13 @@ angular.module('activityTracker')
 
 .controller('NavCtrl', [
 	'$scope',
-
-
 	function($scope){
+		$scope.$on('auth:login-success', function(e, user){
+			$scope.user = user;
+		});
+		// $scope.$on('auth:validation-success', function(e, user){
+		// 	$scope.user = user;
+		// })
 	// 	// this exposes the isAuthenticated and logout method to $scope
 	// 	$scope.signedIn = Auth.isAuthenticated;
 	// 	$scope.logout = Auth.logout;
@@ -17,8 +21,7 @@ angular.module('activityTracker')
 	// 	// event listeners to handle when the user authenticates and logs out
 	// 	// angular-devise automatically broadcasts events when authentication happens
 	// 	// set $scope.user on new user registration
-	// 	$scope.$on('devise:new-registration', function(e, user){
-	// 		$scope.user = user;
+		
 	// 	});
 	// 	// set $scope.user on user login
 	// 	$scope.$on('devise:login', function(e, user){

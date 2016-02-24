@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  
+  # so that devise_token_auth can connect to the routes of ng-token-auth
   mount DeviseTokenAuth::Engine => "/auth"
   root 'application#angular'
   mount_devise_token_auth_for 'User', at: 'auth'
