@@ -6,22 +6,16 @@ angular.module('activityTracker')
 	'$scope',
 	'$state',
 	'$auth',
+	'$rootScope',
+
 	// methods for logging in using omniauth with ng-token-auth
-	function($scope, $state, $auth){
-		$scope.handleBtnClick= function(){
-			$auth.authenticate('strava');
-			}	
-			// // handle success
-			// .then(function(resp){
-			// 	console.log('logged in')
-			// 	// redirect to home on successful login
-			// 	$state.go('home')
-			// })
-			// // handle errors
-			// .catch(function(resp){
-			// 	$state.go('login')
-			// 	// add an error message
-			// });
-		
-		
+	function($scope, $state, $auth, $rootScope){
+		$scope.loginUser = function(){
+			$auth.authenticate('strava')
+		}
+		// this doesn't seem to be running, possibly because $auth.authenticate skips this controller
+		$rootScope.$on('auth:login-success', function(ev, user) {
+    		alert('Welcome ', user.email);
+		});
+
 }]);

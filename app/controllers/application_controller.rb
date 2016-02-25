@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :null_session
-    respond_to :json
+  respond_to :json
   
   # the following are functions to make sure CORS are served correctly
   # http://stackoverflow.com/questions/28711175/getting-ng-token-auth-to-work-with-devise-token-auth
@@ -12,8 +12,29 @@ class ApplicationController < ActionController::Base
   skip_before_filter :verify_authenticity_token
   before_filter :cors_preflight_check
   after_filter :cors_set_access_control_headers
+  # for fixing current_user =  nil issue https://github.com/lynndylanhurley/devise_token_auth/issues/74
+  # add  before_action :authenticate_current_user to any controllers that use current_user
+  def authenticate_current_user
+    render json: {}, status: :unauthorized if get_current_user.nil?
+  end
 
+  def get_current_user
+    return nil unless cookies[:auth_headers]
+    auth_headers = JSON.parse cookies[:auth_headers]
 
+    expiration_datetime = DateTime.strptime(auth_headers["expiry"], "%s")
+    current_user = User.find_by uid: auth_headers["uid"]
+
+    if current_user &&
+       current_user.tokens.has_key?(auth_headers["client"]) &&
+       expiration_datetime > DateTime.now
+
+      @current_user = current_user
+    end
+    @current_user
+  end
+
+  # CORS settings to ensure tokens are being sent properly
   def cors_set_access_control_headers
     headers['Access-Control-Allow-Origin'] = '*'
     headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, OPTIONS'

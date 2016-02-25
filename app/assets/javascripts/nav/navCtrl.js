@@ -5,6 +5,11 @@ angular.module('activityTracker')
 	'$scope',
 	'$state',
 	function($scope, $state){
+		$scope.handleSignOutBtnClick = function(){
+			$auth.signOut();
+			console.log("logged out");
+		}
+
 
 	// 	// this exposes the isAuthenticated and logout method to $scope
 	// 	$scope.signedIn = Auth.isAuthenticated;

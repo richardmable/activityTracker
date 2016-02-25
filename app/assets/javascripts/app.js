@@ -13,9 +13,7 @@ angular.module('activityTracker', ['ui.router', 'templates', 'ng-token-auth'])
 			authProviderPaths: {
 				strava: '/auth/strava'
 			}
-			// authProviderPaths: {
-			// 	strava: '/auth/strava'
-			// }
+
 		});
 		$stateProvider
 			// the state is given a name
