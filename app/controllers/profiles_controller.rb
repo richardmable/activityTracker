@@ -6,8 +6,7 @@ class ProfilesController < ApplicationController
 			profile = User.find(current_user.id).profile
 			respond_with profile
 		else
-			profile = "no profile"
-			respond_with profile
+			respond_with Profile.new
 		end
 	end
 
