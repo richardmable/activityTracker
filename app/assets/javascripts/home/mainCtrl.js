@@ -1,13 +1,13 @@
 angular.module('activityTracker')
 .controller('MainCtrl', [
 	'$scope',
-	'profiles',
 	//this injects posts service into the main controller
 	// 'posts',
 
-	function($scope, profiles){
-		$scope.user = $rootScope.user;
-		$scope.profiles = profiles.profiles;
+	function($scope){
+		
+	
+		// $scope.profiles = profiles.profiles;
 	// 	//can only have two way data binding with $scope variables
 	// 	//this line mirrors the array returned by the service
 	// 	//this way, we can display the posts to the view

@@ -5,13 +5,7 @@ angular.module('activityTracker')
 	'$scope',
 	'$state',
 	function($scope, $state){
-		$scope.$on('auth:login-success', function(e, user){
-			$rootScope.user = user;
-			console.log("welcome, " + user.email);
-		});
-		// $scope.$on('auth:validation-success', function(e, user){
-		// 	$scope.user = user;
-		// })
+
 	// 	// this exposes the isAuthenticated and logout method to $scope
 	// 	$scope.signedIn = Auth.isAuthenticated;
 	// 	$scope.logout = Auth.logout;
