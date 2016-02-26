@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   mount_devise_token_auth_for 'User', at: 'auth', controllers: {
   omniauth_callbacks: 'registrations'}
   # for displaying the auto-generated profile from Strava, and to update
-  resources :profiles, only: [:index, :update]
+  resources :profiles, only: [:index]
   # to grab activities from strava
-  resources :activities, only: [:update]
+  get 'activities' => 'activities#update', as: :activity_update
 
 
   # The priority is based upon order of creation: first created -> highest priority.
