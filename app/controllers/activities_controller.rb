@@ -20,9 +20,21 @@ class ActivitiesController < ApplicationController
 	puts ""
 	puts parsed[2]['average_watts']
 	puts ""
+	# need to cycle through each activity returned and put into db
+	Activity.create(user_id: current_user.id, name: )
 	end
 end
-
+ t.integer  "user_id"
+    t.string   "name"
+    t.float    "distance"
+    t.integer  "moving_time"
+    t.string   "type"
+    t.string   "start_date_local"
+    t.integer  "average_heartrate"
+    t.boolean  "device_watts"
+    t.integer  "average_watts"
+    t.float    "kilojoules"
+    t.integer  "suffer_score"
 
 # response activity
 # {"id"=>497392050, "resource_state"=>2, "external_id"=>"0982F25C-5FFD-4545-8094-C1907CDC068D", 
