@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222193406) do
+ActiveRecord::Schema.define(version: 20160226195804) do
+
+  create_table "activities", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.float    "distance"
+    t.integer  "moving_time"
+    t.string   "type"
+    t.string   "start_date_local"
+    t.integer  "average_heartrate"
+    t.boolean  "device_watts"
+    t.integer  "average_watts"
+    t.float    "kilojoules"
+    t.integer  "suffer_score"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.string   "fname"
@@ -31,6 +47,7 @@ ActiveRecord::Schema.define(version: 20160222193406) do
     t.string   "key_secret"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|

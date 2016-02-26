@@ -9,5 +9,10 @@ class ProfilesController < ApplicationController
 			respond_with Profile.new
 		end
 	end
+	# a method to update user's profile info
+	# incase they update on Strava
+	def update
+	end
+
 
 end

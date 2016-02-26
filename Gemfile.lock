@@ -43,6 +43,7 @@ GEM
     angular_rails_csrf (1.0.4)
       rails (>= 3, < 5)
     arel (6.0.3)
+    awesome_print (1.6.1)
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -190,6 +191,7 @@ PLATFORMS
 DEPENDENCIES
   angular-rails-templates (~> 1.0)
   angular_rails_csrf
+  awesome_print
   better_errors
   byebug
   devise

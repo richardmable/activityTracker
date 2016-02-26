@@ -8,7 +8,7 @@ angular.module('activityTracker')
 	'$auth',
 
 	// methods for logging in using omniauth with ng-token-auth
-	function($scope, $state, $auth, $rootScope){
+	function($scope, $state, $auth){
 		$scope.loginUser = function(){
 			$auth.authenticate('strava')
 		}

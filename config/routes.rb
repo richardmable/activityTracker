@@ -4,10 +4,13 @@ Rails.application.routes.draw do
   mount DeviseTokenAuth::Engine => "/auth"
   # serve the angular app as the root
   root 'application#angular'
-  # devise_token_auth paths
-  mount_devise_token_auth_for 'User', at: 'auth'
-  # for display the auto-generated profile from Strava
-  resources :profiles, only: [:index]
+  # devise_token_auth paths, overriding omni_auth callbacks to grab access-token
+  mount_devise_token_auth_for 'User', at: 'auth', controllers: {
+  omniauth_callbacks: 'registrations'}
+  # for displaying the auto-generated profile from Strava, and to update
+  resources :profiles, only: [:index, :update]
+  # to grab activities from strava
+  resources :activities, only: [:update]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

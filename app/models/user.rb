@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
-	has_one :profile
-	has_one :user_strava_key
+
+	has_one  :profile
+	has_one  :user_strava_key
+	has_many :activities
+
+
 	# create a profile for the user with information from Strava
 	after_create :create_profile
 	#method to create profile
