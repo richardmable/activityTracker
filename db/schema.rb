@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160227045958) do
+ActiveRecord::Schema.define(version: 20160227052201) do
 
   create_table "activities", force: :cascade do |t|
     t.integer "user_id"
@@ -25,6 +25,22 @@ ActiveRecord::Schema.define(version: 20160227045958) do
     t.integer "average_watts"
     t.float   "kilojoules"
     t.integer "suffer_score"
+  end
+
+  create_table "fatigues", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "date"
+    t.integer  "fatigue_score"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "motions", force: :cascade do |t|
+    t.string   "date"
+    t.integer  "steps"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "profiles", force: :cascade do |t|

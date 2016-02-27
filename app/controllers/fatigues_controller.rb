@@ -1,0 +1,2 @@
+class FatiguesController < ApplicationController
+end
