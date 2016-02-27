@@ -16,6 +16,7 @@ class ActivitiesController < ApplicationController
 		# parse the response
 		parsed = JSON.parse(response)
 		# rotate through each response and create an activity for it, associated with the user who made the request
+		# need to add in some logic so that it won't create activities that already exist, use 'name' maybe?
 		parsed.each do |x|
 			Activity.create(user_id: current_user.id, name: x['name'], distance: x['distance'], moving_time: x['moving_time'], activity_type: x['type'], start_date_local: x['start_date_local'], average_heartrate: x['average_heartrate'], device_watts: x['device_watts'], average_watts: x['average_watts'], kilojoules: x['kilojoules'], suffer_score: x['suffer_score'])
 			# if x['type'] == "Ride" || x['type'] == "VirtualRide"
