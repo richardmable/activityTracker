@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160227054441) do
+ActiveRecord::Schema.define(version: 20160229164047) do
 
   create_table "activities", force: :cascade do |t|
     t.integer "user_id"
@@ -50,9 +50,8 @@ ActiveRecord::Schema.define(version: 20160227054441) do
     t.string   "avatar_link"
     t.string   "location"
     t.boolean  "strava_premium"
-    t.string   "birthday"
     t.string   "gender"
-    t.integer  "weight"
+    t.float    "weight"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
