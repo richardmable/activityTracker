@@ -7,6 +7,7 @@ class RegistrationsController < DeviseTokenAuth::OmniauthCallbacksController
 	end
 	def redirect_callbacks
 		super
+		puts request.env['omniauth.auth']
 		# grab the user info from the returned omniauth hash
 		key_secret = request.env['omniauth.auth'].credentials['token']
 		location = request.env['omniauth.auth'].extra.raw_info['city']

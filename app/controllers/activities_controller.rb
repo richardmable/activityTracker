@@ -10,8 +10,8 @@ class ActivitiesController < ApplicationController
 	def strava_response
 		# this makes an API request to Strava for the authenticated athlete's 
 		# last week of activities
-		# the Time.now.to_i - 604800 gives the UNIX epoc time of a week ago
-		uri = URI("https://www.strava.com/api/v3/athletes/#{current_user.uid}/activities?access_token=#{current_user.user_strava_key.key_secret}&after=#{Time.now.to_i - 604800}")
+		# the Time.now.to_i - 2419200 gives the UNIX epoch time of 4 weeks ago
+		uri = URI("https://www.strava.com/api/v3/athletes/#{current_user.uid}/activities?access_token=#{current_user.user_strava_key.key_secret}&after=#{Time.now.to_i - 2419200}")
 		response = Net::HTTP.get(uri)
 		# parse the response
 		parsed = JSON.parse(response)
