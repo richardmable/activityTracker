@@ -1,12 +1,12 @@
 class User < ActiveRecord::Base
 
-	has_one  :profile
-	has_one  :user_strava_key
-	has_many :activities
-	has_many :motions
-	has_many :fatigues
-	has_many :followers, source: :user_follower, through: :user_followers
-	has_many :user_followers
+	has_one  :profile, dependent: :destroy
+	has_one  :user_strava_key, dependent: :destroy
+	has_many :activities, dependent: :destroy
+	has_many :motions, dependent: :destroy
+	has_many :fatigues, dependent: :destroy
+	has_many :followers, source: :user_follower, through: :user_followers, dependent: :destroy
+	has_many :user_followers, dependent: :destroy
 	# create a profile for the user with information from Strava
 	after_create :create_profile
 	#method to create profile
