@@ -5,12 +5,22 @@ angular.module('activityTracker')
 	'fatigues',
 
 	function($scope, fatigues){
-		$scope.fatigues = fatigues.fatigues;
-		$scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-  		$scope.series = ['Series A', 'Series B'];
-  		$scope.data = [
-    		[65, 59, 80, 81, 56, 55, 40],
-    		[28, 48, 40, 19, 86, 27, 90]
-  		];
+		// create an empty label array
+		$scope.labels = [];
+		// create empty data array to be put in $scope.data
+		dataArray = []
+		// create an empty data array, that takes the data array
+		// seems weird but they data array needs to have an array within it
+		// possibly so that it can handle multiple data sets
+		$scope.data = [dataArray];
+		// rotate through the fatigues array response, taken the dates as labels
+		// and the fatigue scores as the data for the chart
+		for (i = 0; i < fatigues.fatigues.length; i++){
+			$scope.labels.push(fatigues.fatigues[i].date);
+			dataArray.push(fatigues.fatigues[i].fatigue_score);
+		};
+		// graph line names
+  		$scope.series = ['Fatigue Score'];
 
-}])
+
+}]);

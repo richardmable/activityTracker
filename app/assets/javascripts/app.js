@@ -5,7 +5,8 @@ angular.module('activityTracker', ['ui.router', 'templates', 'ng-token-auth', 'c
 	'$stateProvider',
 	'$urlRouterProvider',
 	'$authProvider',
-	function($stateProvider, $urlRouterProvider, $authProvider) {
+	'ChartJsProvider',
+	function($stateProvider, $urlRouterProvider, $authProvider, ChartJsProvider) {
 		$authProvider.configure({
 			// set the path of the api (the Rails app)
 			apiUrl: 'http://localhost:3000',
@@ -14,6 +15,10 @@ angular.module('activityTracker', ['ui.router', 'templates', 'ng-token-auth', 'c
 				strava: '/auth/strava'
 			}
 
+		});
+		// chartJS options config, not working?
+		ChartJsProvider.setOptions('Line',{
+			 legend: true
 		});
 		$stateProvider
 			// the state is given a name
