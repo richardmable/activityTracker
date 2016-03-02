@@ -1,7 +1,11 @@
 class FatiguesController < ApplicationController
 
 	def update
+		#authenticate the user
 		authenticate_current_user
+		# grab last 4 weeks of activities
+		strava_response
+		# update the fatigue scores
 		fatigue_scores_update
 	end
 
@@ -18,6 +22,9 @@ class FatiguesController < ApplicationController
 				# would like to add in score that reflects previous days and average miles, fitness etc.
 				fatigue_score = (x.steps / 500) + distance
 				# create that particular day's fatigue score
+				Fatigue.create(user_id: current_user.id, fatigue_score: fatigue_score, date: x.date)
+			else
+				fatigue_score = (x.steps / 500)
 				Fatigue.create(user_id: current_user.id, fatigue_score: fatigue_score, date: x.date)
 			end
 

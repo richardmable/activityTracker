@@ -49,6 +49,12 @@ angular.module('activityTracker', ['ui.router', 'templates', 'ng-token-auth'])
 				// }]
 			})
 
+			.state('fatigue', {
+				url: '/fatigue',
+				templateUrl: 'fatigue/_fatigue.html',
+				controller: 'FatigueCtrl'
+			})
+
 		// otherwise() redirects to unspecified routes
 		$urlRouterProvider.otherwise('home');
 }]);

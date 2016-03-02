@@ -1,5 +1,5 @@
 <h1>Home Page</h1>
-{{user}}
+<h2>Welcome, {{user.name}}!</h2>
 <h2>Your Profile:</h2>
 	<ul>
 		<li>First Name: {{profile.fname}}</li>
@@ -9,5 +9,5 @@
 		<li>Weight: {{profile.weight}}kgs</li>
 	</ul>
 <p>Avatar:</p>
-<img src="{{profile.avatar_link}}" alt="Profile Picture">
+<img ng-src="{{profile.avatar_link}}" alt="Profile Picture">
 
