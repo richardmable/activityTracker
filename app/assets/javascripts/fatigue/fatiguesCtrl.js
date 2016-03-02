@@ -1,10 +1,10 @@
 angular.module('activityTracker')
 
-.controller('FatigueCtrl', [
+.controller('FatiguesCtrl', [
 	'$scope',
 	'fatigues',
 
 	function($scope, fatigues){
-		$scope.fatigues = fatigues;
+		$scope.fatigues = fatigues.fatigues;
 
 }])

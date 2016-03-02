@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'profiles' => 'profiles#index', as: :profiles
   # to grab activities from strava
   get 'activities' => 'activities#update', as: :activity_update
-  post 'fatigues' => 'fatigues#update', as: :fatigue_update
+  get 'fatigues' => 'fatigues#update', as: :fatigue_update
 
 
   # The priority is based upon order of creation: first created -> highest priority.

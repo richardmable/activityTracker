@@ -1,5 +1,5 @@
 angular.module('activityTracker')
-.factory('fatigues' [
+.factory('fatigues', [
 	'$http',
 	function($http){
 		var f = {

@@ -51,8 +51,13 @@ angular.module('activityTracker', ['ui.router', 'templates', 'ng-token-auth'])
 
 			.state('fatigue', {
 				url: '/fatigue',
-				templateUrl: 'fatigue/_fatigue.html',
-				controller: 'FatigueCtrl'
+				templateUrl: 'fatigue/_fatigues.html',
+				controller: 'FatiguesCtrl',
+				resolve: {
+					fatiguesPromise: ['fatigues', function(fatigues){
+						return fatigues.getFatigue();
+					}] 
+				}
 			})
 
 		// otherwise() redirects to unspecified routes

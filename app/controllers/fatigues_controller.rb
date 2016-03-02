@@ -7,6 +7,7 @@ class FatiguesController < ApplicationController
 		strava_response
 		# update the fatigue scores
 		fatigue_scores_update
+		respond_with User.find(current_user.id).fatigues
 	end
 
 	def fatigue_scores_update
