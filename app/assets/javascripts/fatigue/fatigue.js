@@ -6,7 +6,7 @@ angular.module('activityTracker')
 			fatigues: []
 	};
 
-	f.update = function(){
+	f.getFatigue = function(){
 		return $http.get('/fatigues.json').success(function(data){
 			angular.copy(data, f.fatigues)
 		})
