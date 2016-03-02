@@ -1,5 +1,5 @@
-// injects ui-router, Angular templates, and Devise into our Angular app
-angular.module('activityTracker', ['ui.router', 'templates', 'ng-token-auth'])
+// injects ui-router, Angular templates, and ng-token-auth for authentication, and chartkick for angular 
+angular.module('activityTracker', ['ui.router', 'templates', 'ng-token-auth', 'chart.js'])
 // this is the Angular config function to setup a home state
 .config([
 	'$stateProvider',
