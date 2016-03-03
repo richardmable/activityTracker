@@ -10,7 +10,8 @@ angular.module('activityTracker')
 	// methods for logging in using omniauth with ng-token-auth
 	function($scope, $state, $auth){
 		$scope.loginUser = function(){
-			$auth.authenticate('strava')
+			$auth.authenticate('strava');
+			$state.go('home');
 		}
 		$scope.logoSrc = '<%= asset_path("LogInWithStrava.png") %>'
 
