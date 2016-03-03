@@ -2,9 +2,9 @@
 	<ul>
 		<li><a href="#/home">Home</a></li>
 		<!-- get these to hide or show if user is logged in or out -->
-		<li ng-hide="signedIn()"><a href="#/login">Login</a></li>
-		<li><a href="#/fatigue">Fatigue Score</a></li>
-		<li><a href="#/motion">Steps</a></li>
-		<li ng-show="signedIn()"><a href="" ng-click='signOut()'>Signout</a></li>
+		<li ng-hide="user.name"><a href="#/login">Login</a></li>
+		<li ng-show="user.name"><a href="#/fatigue">Fatigue Score</a></li>
+		<li ng-show="user.name"><a href="#/motion">Steps</a></li>
+		<li ng-show="user.name"><a href="" ng-click='signOut()'>Signout</a></li>
 	</ul>
 </div>

@@ -1,13 +1,14 @@
 <h1>Home Page</h1>
-<h2>Welcome, {{user.name}}!</h2>
-<h2>Your Profile:</h2>
-	<ul>
-		<li>First Name: {{profile.fname}}</li>
-		<li>Last Name: {{profile.lname}}</li>
-		<li>Location: {{profile.location}}</li>
-		<li>Gender: {{profile.gender}}</li>
-		<li>Weight: {{profile.weight}}kgs</li>
-	</ul>
-<p>Avatar:</p>
-<img ng-src="{{profile.avatar_link}}" alt="Profile Picture">
+<h2 ng-show="user.name">Welcome, {{user.name}}!</h2>
+<div ng-show="profile.fname">
+	<h2>Your Profile:</h2>
+		<ul>
+			<li ng-show="profile.fname">First Name: {{profile.fname}}</li>
+			<li ng-show="profile.lname">Last Name: {{profile.lname}}</li>
+			<li ng-show="profile.location">Location: {{profile.location}}</li>
+			<li ng-show="profile.gender"> Gender: {{profile.gender}}</li>
+			<li ng-show="profile.weight">Weight: {{profile.weight}}kgs</li>
+		</ul>
+	<img ng-show="profile.avatar_link" ng-src="{{profile.avatar_link}}" alt="Profile Picture">
+</div>
 

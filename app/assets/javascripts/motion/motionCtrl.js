@@ -22,5 +22,4 @@ angular.module('activityTracker')
 		// graph line names
   		$scope.series = ['Daily Steps'];
 
-
 }]);
