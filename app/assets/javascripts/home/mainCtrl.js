@@ -2,11 +2,18 @@ angular.module('activityTracker')
 .controller('MainCtrl', [
 	'$scope',
 	'profile',
+	'followers',
 	//this injects posts service into the main controller
 	// 'posts',
 
-	function($scope, profile){
+	function($scope, profile, followers){
 		$scope.profile = profile.profile;
+		$scope.followers = followers.followers;
+		$scope.following = followers.following;
+		$scope.addFollower = function(){
+			
+		}
+
 	
 		// $scope.profiles = profiles.profiles;
 	// 	//can only have two way data binding with $scope variables

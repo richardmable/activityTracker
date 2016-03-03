@@ -13,6 +13,11 @@ Rails.application.routes.draw do
   get 'activities' => 'activities#update', as: :activity_update
   get 'fatigues' => 'fatigues#update', as: :fatigue_update
   get 'motions' => 'motions#index', as: :motions
+  post 'followers' => 'followers#follower_user', as: :follower_user
+  post 'unfollow' => 'followers#unfollow_user', as: :unfollow_user
+  get 'followers' => 'followers#index', as: :followers
+  get 'following' => 'followers#following', as: :following
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
