@@ -19,14 +19,14 @@ angular.module('activityTracker')
 		})
 	};
 	// add the current user to the follower user's list of followers
-	foll.addFollower = function(){
-		return $http.post('/followers.json', followed_user_id).success(function(data){
+	foll.addFollower = function(id){
+		return $http.post('/followers.json', id).success(function(data){
 			foll.followers.push(data)
 		})
 	};
 	// unfollow a user and return the newly updated list of following
-	foll.unFollow = function(){
-		return $http.post('/unfollow.json', user_id).success(function(data){
+	foll.unFollow = function(id){
+		return $http.post('/unfollow.json', id).success(function(data){
 			angular.copy(data, foll.following)
 		})
 	}

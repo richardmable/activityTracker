@@ -7,6 +7,9 @@ angular.module('activityTracker')
 
 	function($scope, followers, users){
 		$scope.users = users.users;
+		// $scope.addFollower = function() {
+		// 	followers.
+		// }
 
 
 }]);

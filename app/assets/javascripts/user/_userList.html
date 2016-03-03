@@ -3,4 +3,5 @@
 <!-- goes through the lists of users and prints their name -->
 <div ng-repeat="name in users">
 	{{users[$index].name}}
-    </div>
+	<a href="" class="follow" ng-click="addFollower(users[$index].id)">Follow</a>
+</div>
