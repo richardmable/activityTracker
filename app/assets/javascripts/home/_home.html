@@ -15,10 +15,13 @@
 		</ul>
 	<img ng-show="profile.avatar_link" ng-src="{{profile.avatar_link}}" alt="Profile Picture">
 </div>
+
+<div class="followers" ng-show="followers[0].name">
 Followers:
-{{followers}}
-<br>
-<br>
-<br>
+{{followers[0].name}}
+</div>
+
+<div class="following" ng-show="following[0].name">
 Following:
 {{following[0].name}}
+</div>

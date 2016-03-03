@@ -6,6 +6,11 @@ class FollowersController < ApplicationController
 		respond_with User.find(current_user.id).followers
 	end
 
+	# returns all the users
+	def users
+		respond_with User.all
+	end
+
 	# action to return everyone the current user is following
 	def following
 		authenticate_current_user

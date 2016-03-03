@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   post 'unfollow' => 'followers#unfollow_user', as: :unfollow_user
   get 'followers' => 'followers#index', as: :followers
   get 'following' => 'followers#following', as: :following
+  get 'users' => 'followers#users', as: :users
 
 
 

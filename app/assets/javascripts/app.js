@@ -68,6 +68,17 @@ angular.module('activityTracker', ['ui.router', 'templates', 'ng-token-auth', 'c
 				}
 			})
 
+			.state('users', {
+				url: '/users',
+				templateUrl: 'user/_userList.html',
+				controller: 'UserCtrl',
+				resolve: {
+					usersPromise: ['users', function(users){
+						return users.getUsers();
+					}]
+				}
+			})
+
 		// otherwise() redirects to unspecified routes
 		$urlRouterProvider.otherwise('home');
 }]);

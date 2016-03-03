@@ -20,6 +20,27 @@ Motion.create([
 	{user_id: 1, steps: 12432, date: "2016-02-25"},
 	{user_id: 1, steps: 3084, date: "2016-02-26"},
 	{user_id: 1, steps: 7432, date: "2016-02-27"},
-	{user_id: 1, steps: 8476, date: "2016-02-28"}
+	{user_id: 1, steps: 8476, date: "2016-02-28"},
+	{user_id: 2, steps: 4663, date: "2016-02-08"},
+	{user_id: 2, steps: 8764, date: "2016-02-09"},
+	{user_id: 2, steps: 8382, date: "2016-02-10"},
+	{user_id: 2, steps: 10832, date: "2016-02-11"},
+	{user_id: 2, steps: 8957, date: "2016-02-12"},
+	{user_id: 2, steps: 9944, date: "2016-02-13"},
+	{user_id: 2, steps: 2356, date: "2016-02-14"},
+	{user_id: 2, steps: 10453, date: "2016-02-15"},
+	{user_id: 2, steps: 5632, date: "2016-02-16"},
+	{user_id: 2, steps: 14823, date: "2016-02-17"},
+	{user_id: 2, steps: 4628, date: "2016-02-18"},
+	{user_id: 2, steps: 7482, date: "2016-02-19"},
+	{user_id: 2, steps: 7394, date: "2016-02-20"},
+	{user_id: 2, steps: 8467, date: "2016-02-21"},
+	{user_id: 2, steps: 9271, date: "2016-02-22"},
+	{user_id: 2, steps: 10282, date: "2016-02-23"},
+	{user_id: 2, steps: 10567, date: "2016-02-24"},
+	{user_id: 2, steps: 9634, date: "2016-02-25"},
+	{user_id: 2, steps: 11734, date: "2016-02-26"},
+	{user_id: 2, steps: 5728, date: "2016-02-27"},
+	{user_id: 2, steps: 4637, date: "2016-02-28"}
 
 ])
