@@ -27,13 +27,18 @@ class FollowersController < ApplicationController
 	def follow_user
 		authenticate_current_user
 		# add the current user to the user they followed list of followers
-		respond_with User.find(params.user_id).followers.push(User.find(current_user.id))
+		User.find(params.user_id).followers.push(User.find(current_user.id))
+		# run the following action to return the updated group of followers
+		following
 	end
 
 	# action to unfollow a user
 	def unfollow_user
 		authenticate_current_user
-		respond_with User.find(params.user_id).followers.destroy(User.find(current_user.id))
+		# destroy the current user from that user's followers
+		User.find(params.user_id).followers.destroy(User.find(current_user.id))
+		# run the following action to return the updated group of followers
+		following
 	end
 
 

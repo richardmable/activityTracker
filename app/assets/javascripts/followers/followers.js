@@ -24,6 +24,12 @@ angular.module('activityTracker')
 			foll.followers.push(data)
 		})
 	};
+	// unfollow a user and return the newly updated list of following
+	foll.unFollow = function(){
+		return $http.post('/unfollow.json', user_id).success(function(data){
+			angular.copy(data, foll.following)
+		})
+	}
 
 	return foll;
 }])

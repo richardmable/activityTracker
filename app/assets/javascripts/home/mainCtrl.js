@@ -10,10 +10,7 @@ angular.module('activityTracker')
 		$scope.profile = profile.profile;
 		$scope.followers = followers.followers;
 		$scope.following = followers.following;
-		$scope.addFollower = function(){
-			
-		}
-
+		
 	
 		// $scope.profiles = profiles.profiles;
 	// 	//can only have two way data binding with $scope variables
