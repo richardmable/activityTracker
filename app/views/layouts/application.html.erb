@@ -7,19 +7,23 @@
 	  <%= csrf_meta_tags %>
 	</head>
 	<body ng-app="activityTracker">
-		<div ng-include="'nav/_nav.html'"></div>
-	<!-- for flash messaging. Divs only appear if there are flash messages -->
-	<!-- otherwise they constantly appear if they were wrapped in their own divs -->
-		<% if flash[:notice] -%>
-			<div class="flashNotice"><p><%= flash[:notice] %><p></div>
-		<% end %>
-		<% if flash[:alert] -%>
-			<div class="flashNotice"><p><%= flash[:alert] %><p></div>
-		<% end %>
-	<!-- render the Angular state -->
-		<div>
-			<ui-view></ui-view>
+		<div class="row">
+    	<div class="col-md-6 col-md-offset-3">
+			<div ng-include="'nav/_nav.html'"></div>
+		<!-- for flash messaging. Divs only appear if there are flash messages -->
+		<!-- otherwise they constantly appear if they were wrapped in their own divs -->
+			<% if flash[:notice] -%>
+				<div class="flashNotice"><p><%= flash[:notice] %><p></div>
+			<% end %>
+			<% if flash[:alert] -%>
+				<div class="flashNotice"><p><%= flash[:alert] %><p></div>
+			<% end %>
+		<!-- render the Angular state -->
+			<div>
+				<ui-view></ui-view>
+			</div>
 		</div>
+	</div>
 
 
 	</body>

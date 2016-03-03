@@ -1,8 +1,11 @@
+<div class="page-header">
 <div ng-hide="user.name">	
 	<h1>Welcome!</h1>
 	<p>This site is designed to show how all your "other" activities in life can affect your fatigue while cycling</p>
 	<p>You'll need to connect with your Strava account above, and then the site with do all the calculations for you!</p>
 </div>
+</div>
+<div class="page-header">
 <h2 ng-show="user.name">Welcome, {{user.name}}!</h2>
 <div ng-show="profile.fname">
 	<h2>Your Profile:</h2>
@@ -14,6 +17,7 @@
 			<li ng-show="profile.weight">Weight: {{profile.weight}}kgs</li>
 		</ul>
 	<img ng-show="profile.avatar_link" ng-src="{{profile.avatar_link}}" alt="Profile Picture">
+</div>
 </div>
 
 <div class="followers" ng-show="followers[0].name">
