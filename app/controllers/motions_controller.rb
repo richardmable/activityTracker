@@ -1,6 +1,7 @@
 class MotionsController < ApplicationController
-	before_action :authenticate_current_user
+	
 	def index
+		authenticate_current_user
 		respond_with User.find(current_user.id).motions
 	end
 

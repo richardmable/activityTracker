@@ -1,10 +1,10 @@
 angular.module('activityTracker')
 
-.controller('FatiguesCtrl', [
+.controller('MotionCtrl', [
 	'$scope',
-	'fatigues',
+	'motion',
 
-	function($scope, fatigues){
+	function($scope, motion){
 		// create an empty label array
 		$scope.labels = [];
 		// create empty data array to be put in $scope.data
@@ -15,12 +15,12 @@ angular.module('activityTracker')
 		$scope.data = [dataArray];
 		// rotate through the fatigues array response, taken the dates as labels
 		// and the fatigue scores as the data for the chart
-		for (i = 0; i < fatigues.fatigues.length; i++){
-			$scope.labels.push(fatigues.fatigues[i].date);
-			dataArray.push(fatigues.fatigues[i].fatigue_score);
+		for (i = 0; i < motion.motions.length; i++){
+			$scope.labels.push(motion.motions[i].date);
+			dataArray.push(motion.motions[i].steps);
 		};
 		// graph line names
-  		$scope.series = ['Fatigue Score'];
+  		$scope.series = ['Daily Steps'];
 
 
 }]);

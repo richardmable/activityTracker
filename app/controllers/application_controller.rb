@@ -72,7 +72,7 @@ class ApplicationController < ActionController::Base
     # parse the response
     parsed = JSON.parse(response)
     # rotate through each response and create an activity for it, associated with the user who made the request
-    # need to add in some logic so that it won't create activities that already exist, use 'name' maybe?
+    # name must be unique so already retrivied activties will not be duplicated
     parsed.each do |x|
       date = x['start_date_local']
       # taking just the year month day from start_date_local

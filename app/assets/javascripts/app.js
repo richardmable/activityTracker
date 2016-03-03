@@ -5,8 +5,7 @@ angular.module('activityTracker', ['ui.router', 'templates', 'ng-token-auth', 'c
 	'$stateProvider',
 	'$urlRouterProvider',
 	'$authProvider',
-	'ChartJsProvider',
-	function($stateProvider, $urlRouterProvider, $authProvider, ChartJsProvider) {
+	function($stateProvider, $urlRouterProvider, $authProvider) {
 		$authProvider.configure({
 			// set the path of the api (the Rails app)
 			apiUrl: 'http://localhost:3000',
@@ -15,10 +14,6 @@ angular.module('activityTracker', ['ui.router', 'templates', 'ng-token-auth', 'c
 				strava: '/auth/strava'
 			}
 
-		});
-		// chartJS options config, not working?
-		ChartJsProvider.setOptions('Line',{
-			 legend: true
 		});
 		$stateProvider
 			// the state is given a name
@@ -36,7 +31,6 @@ angular.module('activityTracker', ['ui.router', 'templates', 'ng-token-auth', 'c
 						return profile.getProfile();
 					}] 
 				}
-
 			})
 
 			// the login state
@@ -44,14 +38,6 @@ angular.module('activityTracker', ['ui.router', 'templates', 'ng-token-auth', 'c
 				url: '/login',
 				templateUrl: 'auth/_login.html',
 				controller: 'AuthCtrl'
-				// this is an onEnter callback that will send the user to the home state
-				// if they are already authenticated or just registered
-				// have to inject $state and Auth
-				// onEnter: ['$state', 'Auth', function($state, Auth){
-				// 	Auth.currentUser().then(function(){
-				// 		$state.go('home');
-				//	})
-				// }]
 			})
 
 			.state('fatigue', {
@@ -62,6 +48,17 @@ angular.module('activityTracker', ['ui.router', 'templates', 'ng-token-auth', 'c
 					fatiguesPromise: ['fatigues', function(fatigues){
 						return fatigues.getFatigue();
 					}] 
+				}
+			})
+
+			.state('motion', {
+				url: '/motion',
+				templateUrl: 'motion/_motion.html',
+				controller: 'MotionCtrl',
+				resolve: {
+					motionPromise: ['motion', function(motion){
+						return motion.getMotion();
+					}]
 				}
 			})
 
