@@ -1,4 +1,10 @@
-<h1>Welcome!</h1>
-<h1>Please log in with your Strava Account</h1>
-<a href="" ng-click="loginUser()" id="loginButton"><img ng-src="{{logoSrc}}"></a>
+<div ng-hide="user.name">
+	<h1>Welcome!</h1>
+	<h1>Please log in with your Strava Account</h1>
+	<a href="" ng-click="loginUser()" id="loginButton"><img ng-src="{{logoSrc}}"></a>
+</div>
+
+<div ng-show="user.name">
+	<h1>Welcome back, {{user.name}}</h1>
+</div>
 

@@ -7,7 +7,7 @@
 	  <%= csrf_meta_tags %>
 	</head>
 	<body ng-app="activityTracker">
-		<div ng-include="'nav/_nav.html'"></div>
+		<div ng-if="user.name" ng-include="'nav/_nav.html'"></div>
 	<!-- for flash messaging. Divs only appear if there are flash messages -->
 	<!-- otherwise they constantly appear if they were wrapped in their own divs -->
 		<% if flash[:notice] -%>

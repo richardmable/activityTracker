@@ -12,11 +12,6 @@ angular.module('activityTracker')
 		$scope.loginUser = function(){
 			$auth.authenticate('strava');
 			$state.go('home');
-		};
-		$scope.logoSrc = '<%= asset_path("LogInWithStrava.png") %>';
-		// document.onload =  function(){
-		// document.getElementById("loginButton").onClick(function(){
-		// 	$state.go('home');
-		// })};
-
+		}
+		$scope.logoSrc = '<%= asset_path("LogInWithStrava.png") %>'
 }]);

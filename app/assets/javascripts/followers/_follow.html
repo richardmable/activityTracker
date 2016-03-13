@@ -1,0 +1,11 @@
+<h2>Followers:</h2>
+<p ng-hide="followers[0].name">You don't have any followers</p>
+<div class="followers" ng-show="followers[0].name">
+{{followers[0].name}}
+</div>
+
+<h2>Following:</h2>
+<p ng-hide="following[0].name">You're not following anyone</p>
+<div class="following" ng-show="following[0].name">
+{{following[0].name}}
+</div>
