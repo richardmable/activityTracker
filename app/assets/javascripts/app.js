@@ -13,9 +13,13 @@ angular.module('activityTracker', ['ui.router', 'templates', 'ng-token-auth', 'c
 			authProviderPaths: {
 				strava: '/auth/strava'
 			}
-
 		});
 		$stateProvider
+			.state('/', {
+				url: '/',
+				templateUrl: 'landing/_landing.html',
+				controller: 'LandingCtrl'
+			})
 			// the state is given a name
 			.state('home', {
 				// the state is given a url
@@ -26,24 +30,15 @@ angular.module('activityTracker', ['ui.router', 'templates', 'ng-token-auth', 'c
 				controller: 'MainCtrl',
 				// the resolve property ensures that anytime the home state is entered
 				// it will automatically get the profile of the user
+				// followers to get feed of stats they follow
 				resolve: {
 					profilePromise: ['profile', function(profile){
 						return profile.getProfile();
-					}],
-					followersPromise: ['followers', function(followers){
-						return followers.getFollowers();
 					}],
 					followingPromise: ['followers', function(followers){
 						return followers.getFollowing();
 					}]
 				}
-			})
-
-			// the login state
-			.state('login', {
-				url: '/login',
-				templateUrl: 'auth/_login.html',
-				controller: 'AuthCtrl'
 			})
 
 			.state('fatigue', {
@@ -79,6 +74,20 @@ angular.module('activityTracker', ['ui.router', 'templates', 'ng-token-auth', 'c
 				}
 			})
 
+			.state('follow', {
+				url: '/follow',
+				templateUrl: 'followers/_follow.html',
+				controller: 'FollowersCtrl',
+				resolve: {
+					followersPromise: ['followers', function(followers){
+						return followers.getFollowers();
+					}],
+					followingPromise: ['followers', function(followers){
+						return followers.getFollowing();
+					}]
+				}
+			})
+
 		// otherwise() redirects to unspecified routes
-		$urlRouterProvider.otherwise('home');
+		$urlRouterProvider.otherwise('/');
 }]);
