@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'followers' => 'followers#index', as: :followers
   get 'following' => 'followers#following', as: :following
   get 'users' => 'followers#users', as: :users
+  get 'auth/fitbit_oauth2/callback' => 'application#angular'
 
 
 

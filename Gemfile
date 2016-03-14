@@ -24,7 +24,7 @@ gem 'figaro'
 # omniAuth ruby gem for authenticating with Strava
 gem 'omniauth-strava'
 # omniAuth ruby gem for authenticating with Fitbit
-gem 'omniauth-fitbit'
+gem 'omniauth-fitbit-oauth2'
 # secure token based authentication designed to work with ng-token-auth module
 gem 'devise_token_auth'
 # provides support for Cross-Origin Resource Sharing (CORS) for Rack compatible web applications

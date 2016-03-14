@@ -4,12 +4,12 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   ENV['STRAVA_APP_ID'],   
   ENV['STRAVA_APP_SECRET'], 
   scope: 'public',
-  info_fields: 'access_token, email, firstname, lastname',
   callback_url: 'http://localhost:3000/users/auth/strava/callback'
 
-  provider :fitbit,
+  provider :fitbit_oauth2,
   ENV['FITBIT_APP_ID'],
   ENV['FITBIT_APP_SECRET'],
-  callback_url: 'http://localhost:3000/users/auth/fitbit/callback'
+  scope: 'activity heartrate profile sleep',
+  callback_url: 'http://localhost:3000/omniauth/fitbit_oauth2/callback'
 
 end
