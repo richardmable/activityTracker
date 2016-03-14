@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 	after_create :create_profile
 	#method to create profile
 	def create_profile
+		# update the last created profile to associate with user
 		Profile.last.update(user_id: User.last.id, fname: User.last.name.split[0], lname: User.last.name.split[1])
 	end
   # Include default devise modules.
