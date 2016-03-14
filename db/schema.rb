@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160229164047) do
+ActiveRecord::Schema.define(version: 20160314002923) do
 
   create_table "activities", force: :cascade do |t|
     t.integer "user_id"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 20160229164047) do
     t.integer  "fatigue_score"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "keys", force: :cascade do |t|
+    t.string   "strava_key_secret"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "user_id"
+    t.string   "fitbit_key_secret"
+    t.string   "fitbit_key_refresh"
   end
 
   create_table "motions", force: :cascade do |t|
@@ -61,13 +70,6 @@ ActiveRecord::Schema.define(version: 20160229164047) do
     t.integer  "user_follower_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-  end
-
-  create_table "user_strava_keys", force: :cascade do |t|
-    t.string   "key_secret"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -8,3 +8,11 @@
 	<h1>Welcome back, {{user.name}}</h1>
 </div>
 
+<p ng-click="showAbout = ! showAbout">About</p>
+<div class="about" ng-show="showAbout">
+	<p>Cycle Walk came about when I realized there was a gap between recording your actual workouts, and the "other" activities in your daily life. The mission of this application is to give you a better understanding of how life's daily activities, such as sleep and walking, might be affecting your "real" workouts. It automatically pulls your activity data from both Strava and Fitbit, and then calculates your overall "fatigue" based on sleep, steps, and your workouts. Each metric is given a different value, and the fatigue score is cumulative, constantly rising and falling.</p>
+	<p>You can gain insights into why you may be tired or feel better on a particular day by looking at what life has thrown  at you in the "other" activities category, and use this to continue to improve your overall health.</p>
+	<p>If you have step data from Fitbit, connect with the application once you have logged in with Strava, and it will automatically pull steps and sleep from there.</p>
+	<p>Else, you can manually enter steps and sleep for each day, or simply go with the pre-determined selectors.</p>
+	<p>More features will be added as they become available, such as connecting to Garmin's API, and tweaking the overall fatigue score algorithm. </p>
+</div>

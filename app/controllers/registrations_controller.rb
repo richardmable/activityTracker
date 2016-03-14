@@ -3,7 +3,7 @@ class RegistrationsController < DeviseTokenAuth::OmniauthCallbacksController
 	def omniauth_success
 		super
 		# update the user strava key with the newly created
-		UserStravaKey.last.update(user_id: User.last.id)
+		Key.last.update(user_id: User.last.id)
 	end
 	def redirect_callbacks
 		super
@@ -17,7 +17,7 @@ class RegistrationsController < DeviseTokenAuth::OmniauthCallbacksController
 		weight = request.env['omniauth.auth'].extra.raw_info['weight']
 
 		# create the user_strava_key and save it.
-		UserStravaKey.create(key_secret: key_secret)
+		Key.create(strava_key_secret: key_secret)
 		# create profile, which will then be associated with the user once created
 		Profile.create(avatar_link: avatar, location: location, strava_premium: premium, gender: gender, weight: weight)
 	end

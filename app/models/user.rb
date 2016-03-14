@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
 	has_one  :profile, dependent: :destroy
-	has_one  :user_strava_key, dependent: :destroy
+	has_one  :key, dependent: :destroy
 	has_many :activities, dependent: :destroy
 	has_many :motions, dependent: :destroy
 	has_many :fatigues, dependent: :destroy
