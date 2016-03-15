@@ -11,7 +11,8 @@ angular.module('activityTracker', ['ui.router', 'templates', 'ng-token-auth', 'c
 			apiUrl: 'http://localhost:3000',
 			// set the omniauth provider path 
 			authProviderPaths: {
-				strava: '/auth/strava'
+				strava: '/auth/strava',
+				fitbit: '/auth/fitbit_oauth2'
 			}
 		});
 		$stateProvider

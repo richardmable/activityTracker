@@ -11,7 +11,7 @@ angular.module('activityTracker')
 	function($scope, $state, $auth){
 		$scope.loginUser = function(){
 			$auth.authenticate('strava');
-			$state.go('home');
 		}
+
 		$scope.logoSrc = '<%= asset_path("LogInWithStrava.png") %>'
 }]);
