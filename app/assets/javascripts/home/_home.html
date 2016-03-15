@@ -1,19 +1,24 @@
-<h2 ng-show="user.name">Welcome, {{user.name}}!</h2>
-
-<!-- combining using ng-click and and ng-show to show profile onclick -->
-<p ng-click="showProfile = ! showProfile">Profile</p>
-<div class="profile" ng-show="showProfile">
-	<h2>Your Profile:</h2>
-		<ul>
-			<li ng-show="profile.fname">First Name: {{profile.fname}}</li>
-			<li ng-show="profile.lname">Last Name: {{profile.lname}}</li>
-			<li ng-show="profile.location">Location: {{profile.location}}</li>
-			<li ng-show="profile.gender"> Gender: {{profile.gender}}</li>
-			<li ng-show="profile.weight">Weight: {{profile.weight}}kgs</li>
-		</ul>
-	<img ng-show="profile.avatar_link" ng-src="{{profile.avatar_link}}" alt="Profile Picture">
-</div>
-<a href="" ng-click="fitBitInfo()" class="fitBitInfo">Connect with Fitbit</a>
-<div class="mainFeed">
-	
+<div class="homeWrapper">
+	<h2 ng-show="user.name">Welcome, {{user.name}}!</h2>
+	<div class="profileDisplay">
+		<!-- combining using ng-click and and ng-show to show profile onclick -->
+		<h2 ng-click="showProfile = ! showProfile">Profile</h2>
+		<div class="profile" ng-show="showProfile">
+			<ul>
+				<li ng-show="profile.fname">First Name: {{profile.fname}}</li>
+				<li ng-show="profile.lname">Last Name: {{profile.lname}}</li>
+				<li ng-show="profile.location">Location: {{profile.location}}</li>
+				<li ng-show="profile.gender"> Gender: {{profile.gender}}</li>
+				<li ng-show="profile.weight">Weight: {{profile.weight}}kgs</li>
+			</ul>
+			<img ng-show="profile.avatar_link" ng-src="{{profile.avatar_link}}" alt="Profile Picture">
+		</div>
+	</div>
+	<div class="fitBitConnect">
+		<h2>Connect with</h2>
+		<a href="" ng-click="fitBitInfo()" class="fitBitInfo"><img ng-src="{{fitBitLogo}}"></a>
+	</div>
+	<div class="mainFeed">
+		
+	</div>
 </div>

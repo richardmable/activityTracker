@@ -1,0 +1,268 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*standard text font family*/
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,400italic,700);
+/*title text font*/
+@font-face {
+	font-family: 'telegrafico';
+	src: url('<%= asset_path("telegrafico.ttf") %>');
+}
+
+* {
+	padding: 0;
+	margin: auto;
+}
+/*style for login page*/
+.landingBackgroundNoLogIn {
+	background-image: url(https://s3.amazonaws.com/cyclewalk.com/new+folder/IMG_9519.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	height: 850px;
+	margin: auto;
+	text-align: center;
+	font-family: "telegrafico", Georgia, serif;
+}
+
+.welcome {
+	font-size: 200%;
+	color: orange;
+}
+.welcome h1, h2 {
+	margin: 25px auto 50px auto;
+	padding: 20px;
+	background-color: rgba(255, 255, 255, .8);
+	border-radius: 12px;
+}
+.welcome h1 {
+	width: 800px;
+}
+
+.welcome h2 {
+	font-size: 100%;
+	width: 700px;
+}
+.welcome a {
+	margin: 50px auto auto auto;
+
+}
+
+.aboutSite h1 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 100%;
+	width: 100px;
+
+}
+
+.aboutSite p {
+	font-family: "Raleway", Georgia, serif;
+	font-size: 17px;
+	background-color: rgba(255, 255, 255, .95);
+	border-radius: 12px;
+	width: 600px;
+	margin: auto;
+	padding: 10px;
+
+}
+
+.clearfix {
+	height: 10px;
+}
+
+/*style for login page post login*/
+
+.landingBackgroundLoggedIn {
+	width: 1000px;
+	background-image: none;
+	margin: auto;
+	text-align: center;
+	font-family: "telegrafico", Georgia, serif;
+}
+
+/*navbar style*/
+.navbar {
+	font-family: "Raleway", Georgia, serif;
+	background-color: tomato;
+	height: 75px;
+	margin: auto;
+	text-align: center;
+}
+
+.navbar ul li {
+	list-style-type: none;
+	display: inline-block;
+	margin: 25px 20px auto 20px;
+	border-radius: 12px;
+}
+
+.navbar ul li a:hover {
+	background-color: rgba(255, 255, 255, .8);
+	padding: 10px;
+	border-radius: 12px;
+	color: purple;
+}
+
+.navbar ul li a {
+	text-decoration: none;
+	color: white;
+	padding: 10px;
+}
+
+/*home page style*/
+
+.homeWrapper {
+	width: 1000px;
+	text-align: center;
+	font-family: "Raleway", Georgia, serif;
+	color: #5E4E66;
+}
+
+.homeWrapper h2 {
+	margin: auto;
+	font-family: "telegrafico", Georgia, serif;
+	font-size: 200%;
+	color: tomato;
+}
+
+.fitBitConnect {
+	width: 275px;
+	display: inline-block;
+	position: relative;
+	left: 325px;
+}
+
+.profileDisplay {
+	width: 275px;
+	display: inline-block;
+	position: relative;
+	right: 325px;
+}
+.profileDisplay p {
+	width: 50px;
+}
+
+
+.profileDisplay p:hover {
+	background-color: rgba(255,99,71, .8);
+	color: white;
+	padding: 10px;
+	border-radius: 12px;
+}
+
+.profile ul li {
+	list-style-type: none;
+	margin: 15px;
+	text-align: left;
+}
+
+/*fatigue page*/
+
+.fatiguePage {
+	width: 1000px;
+	margin: auto;
+	text-align: center;
+	font-family: "Raleway", Georgia, serif;
+	color: tomato;
+}
+
+.fatiguePage h1, h2, h3 {
+	font-family: "telegrafico", Georgia, serif;
+	margin: 10px;
+}
+
+.fatiguePage li {
+	list-style-type: none;
+}
+
+/*daily steps page*/
+
+.motionPage {
+	width: 1000px;
+	margin: auto;
+	text-align: center;
+	font-family: "Raleway", Georgia, serif;
+	color: tomato;
+}
+
+.motionPage h1, h2, h3 {
+	font-family: "telegrafico", Georgia, serif;
+	margin: 10px;
+}
+
+.motionPage li {
+	list-style-type: none;
+}
+
+/*followers and following page*/
+
+
+.followersPage {
+	width: 1000px;
+	margin: auto;
+	text-align: center;
+	font-family: "Raleway", Georgia, serif;
+	color: tomato;
+}
+
+.followersPage h1, h2, h3 {
+	font-family: "telegrafico", Georgia, serif;
+	margin: 10px;
+}
+
+.followersPage li {
+	list-style-type: none;
+}
+
+
+/*all users page*/
+
+.allUsersPage {
+	width: 1000px;
+	margin: auto;
+	text-align: center;
+	font-family: "Raleway", Georgia, serif;
+	color: tomato;
+}
+
+.allUsersPage h1, h2, h3 {
+	font-family: "telegrafico", Georgia, serif;
+	margin: 10px;
+}
+
+.allUsersPage li {
+	list-style-type: none;
+	color: #5E4E66;
+}
+
+.allUsersPage p {
+	color: #5E4E66;
+}
+
+.allUsersPage a {
+	text-decoration: none;
+	color: #5E4E66;;
+}
+
+.allUsersPage a:hover {
+	background-color: rgba(255,99,71, .8);
+	color: white;
+	padding: 10px;
+	border-radius: 12px;
+}
+
+
+

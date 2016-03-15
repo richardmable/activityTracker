@@ -1,7 +1,9 @@
-<h1>List of all users</h1>
+<div class="allUsersPage">
+	<h1>List of all users</h1>
 
-<!-- goes through the lists of users and prints their name -->
-<div ng-repeat="name in users">
-	{{users[$index].name}}
-	<a href="" class="follow" ng-click="addFollower(users[$index].id)">Follow</a>
+	<!-- goes through the lists of users and prints their name -->
+	<div ng-repeat="name in users">
+		{{users[$index].name}}
+		<a href="" class="follow" ng-click="addFollower(users[$index].id)">Follow</a>
+	</div>
 </div>
